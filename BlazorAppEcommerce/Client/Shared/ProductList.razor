@@ -1,0 +1,85 @@
+﻿@page "/product"
+
+
+<h3>ProductList</h3>
+
+<ul>
+
+@foreach( var product in Products)
+{
+	<li class="media my-3">
+	<div class="media-img-wrapper mr-2">
+		<div class="product-name" >
+		<h4>@product.Name</h4>
+		</div>
+
+			@*<div class="media-img-wrapper mr-2" >
+			<a href="#">
+		<img class="media-img" src="@product.ImageUrl", alt="no image">
+			</a>
+		</div>*@
+
+		<div class="desc">
+			<content> @product.Description</content>
+		</div>
+
+			<div class="price">
+				<content> <b>Price: </b>@product.Price</content>
+			</div>
+	</div>
+		</li>
+}
+
+</ul>
+
+
+
+
+
+
+@code {
+
+	private static List<Product> Products = new List<Product>
+	{
+
+		new Product
+		{
+			Id= 1,
+			Name="Think & Grow Rich",
+			Description= "Think and Grow Rich is the 1# inspirational and motivational classic for individuals who are interested in achieving their goals and succeeding in life. Drawing inspiration from the lives of Andrew Carnegie, Thomas Edison, Henry Ford, and other millionaires of his generation, Napoleon Hill reveals the life-changing secret to securing exceptional wealth and success.",
+			ImageUrl=@"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Think_and_grow_rich_original_cover.jpg/160px-Think_and_grow_rich_original_cover.jpg",
+			Price = 84.00
+
+		},
+
+		new Product{
+
+				Id= 2,
+			Name="The Power of Your Subconscious Mind",
+			Description= "The Power of Your Subconscious Mind has inspired millions of readers to unlock the unseen forces and invisible power within them. Dr Murphy's mind-focusing techniques are based on a simple principle: If you believe in something without reservation and picture it in your mind, you can remove the subconscious obstacles that prevent you from achieving the results you want, and your belief can become a reality.",
+			ImageUrl=@"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Think_and_grow_rich_original_cover.jpg/160px-Think_and_grow_rich_original_cover.jpg",
+			Price = 50.56
+		},
+
+		new Product{
+
+				Id= 3,
+			Name="The Healing Power of Love",
+			Description= "BOOKS BY DR. JOSEPH MURPHY The Amazing Laws of Cosmic Mind Power The Cosmic Energizer: Miracle Power of the Universe The Cosmic Power Within You Great Bible Truths for Human Problems ",
+			ImageUrl=@"https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Think_and_grow_rich_original_cover.jpg/160px-Think_and_grow_rich_original_cover.jpg",
+			Price = 98.06
+		},
+
+		new Product{
+
+				Id= 4,
+			Name="The Power of A Positive Attitude",
+			Description= "Have you ever wondered how your attitude can influence your Success and failure? Have you ever considered the power of saying ‘I Can’, ‘I must’, ‘I will’? “I am not saying a positive attitude can make you successful. I am saying a positive attitude will make you successful.” – Norman Vincent Peale from helping you interpret and understand the true nature of your current attitude to building up self-confidence, which is a must for an affirmative attitude, this book details the dos and don’ts in dealing with your boss, provides handy tips for overcoming negative attitude, managing stress, and coping with burnout, and expounds on how converting negative thinking to positive action can bring about a change in life. Packed with powerful information, The power of a positive attitude will help you uncover your hidden abilities and achieve success.",
+			ImageUrl="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Think_and_grow_rich_original_cover.jpg/160px-Think_and_grow_rich_original_cover.jpg",
+			Price = 120.56
+		}
+
+
+	};
+
+	}
